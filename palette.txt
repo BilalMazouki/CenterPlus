@@ -1,0 +1,44 @@
+ dark: {
+    name: "Dark Mode",
+    description: "Professional dark theme",
+    icon: Moon,
+    preview: {
+      bg: "from-slate-900 to-slate-800",
+      card: "bg-slate-800/80 backdrop-blur-sm border border-blue-400/10",
+      text: "text-white",
+      accent: "text-blue-400",
+    },
+  },
+  light: {
+    name: "Light Mode",
+    description: "Clean light theme",
+    icon: Sun,
+    preview: {
+      bg: "from-slate-50 to-white",
+      card: "bg-white/80 backdrop-blur-sm border border-blue-400/10",
+      text: "text-slate-900",
+      accent: "text-blue-600",
+    },
+  },
+  blue: {
+    name: "Ocean Blue",
+    description: "Academic blue theme",
+    icon: Droplets,
+    preview: {
+      bg: "from-[#0A2540] via-[#0F3556] to-[#113A5D]",
+      card: "bg-white/5 backdrop-blur-sm border border-cyan-400/10",
+      text: "text-white",
+      accent: "text-[#4DD0E1]",
+    },
+  },
+  purple: {
+    name: "Creative Purple",
+    description: "Vibrant learning theme",
+    icon: Flame,
+    preview: {
+      bg: "from-[#2A103D] via-[#341449] to-[#3B1B52]",
+      card: "bg-white/5 backdrop-blur-sm border border-pink-400/10",
+      text: "text-white",
+      accent: "text-[#E040FB]",
+    },
+  },
