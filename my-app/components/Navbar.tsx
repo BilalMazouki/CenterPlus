@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/navigation"
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // inside your component
 
@@ -43,6 +44,7 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <NavbarButton variant="secondary">Login</NavbarButton>
             <NavbarButton
             onClick={() =>
@@ -94,7 +96,9 @@ export function NavbarDemo() {
               >
                 Get started now
               </NavbarButton>
-
+              <div className="flex w-full items-center justify-center">
+                <ThemeToggle />
+              </div>
             </div>
           </MobileNavMenu>
         </MobileNav>

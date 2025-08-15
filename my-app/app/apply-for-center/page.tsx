@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+export const dynamic = "force-dynamic"
+
+import { useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -20,7 +22,7 @@ const steps = [
   { id: 4, title: "Pricing Plan", icon: CreditCard },
 ]
 
-export default function ApplyForCenter() {
+function ApplyForCenterInner() {
   const searchParams = useSearchParams()
   const planParam = searchParams.get("plan")
 
@@ -201,8 +203,8 @@ export default function ApplyForCenter() {
                     <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-white/5 mx-4 hidden sm:block" />
                   )}
                 </div>
-              )
-            })}
+              )}
+            )}
           </div>
           <div className="relative">
             <div className="h-2 bg-white/5 rounded-full backdrop-blur-sm" />
@@ -317,5 +319,13 @@ export default function ApplyForCenter() {
         </svg>
       </div>
     </section>
+  )
+}
+
+export default function ApplyForCenter() {
+  return (
+    <Suspense>
+      <ApplyForCenterInner />
+    </Suspense>
   )
 }

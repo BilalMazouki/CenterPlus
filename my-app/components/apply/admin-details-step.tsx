@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { FloatingLabelInput } from "@/components/ui/floating-label-input"
 import { Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { supabase } from "@/supabase/supabase-js"
+import { getSupabaseClient } from "@/supabase/supabase-js"
 
 interface AdminDetailsStepProps {
   formData: any
@@ -21,6 +21,7 @@ export function AdminDetailsStep({ formData, errors, updateFormData }: AdminDeta
    
   
     // Check if email already exists in applications
+    const supabase = getSupabaseClient()
     const { data, error } = await supabase
       .from('applications')
       .select('email')
@@ -33,6 +34,7 @@ export function AdminDetailsStep({ formData, errors, updateFormData }: AdminDeta
   // TODO: Add Supabase signup with password
   const signUpWithPassword = async (email: string, password: string) => {
   
+    const supabase = getSupabaseClient()
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
